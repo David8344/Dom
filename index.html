@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="p-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <script>
+        function display1() {
+
+            xml = document.getElementById("agenda")
+            contato1 = xml.getElementsByTagName("contatoname")[0]
+            nome = "Name: " + contato1.getElementsByTagName("name")[0].firstChild.data
+            typeph1 = contato1.getElementsByTagName("phone")[0].getAttribute("type") + ": "
+            telefone1 = typeph1 + contato1.getElementsByTagName("phone")[0].firstChild.data
+            typeph2 = contato1.getElementsByTagName("phone")[1].getAttribute("type") + ": "
+            telefone2 = typeph2 + contato1.getElementsByTagName("phone")[1].firstChild.data
+            email = "email: " + contato1.getElementsByTagName("email")[0].firstChild.data
+
+            turma = "turma: " + contato1.getElementsByTagName("turma")[0].firstChild.data
+
+            alert("Cartão de contato: \n\n" + nome + "\n" + telefone1 + "\n" + telefone2 + "\n" + email + "\n" + turma)
+        }
+
+
+        function display2() {
+
+            xml = document.getElementById("agenda")
+            contato2 = xml.getElementsByTagName("contatoname")[1]
+            nome = "Name: " + contato2.getElementsByTagName("name")[0].firstChild.data
+            typeph1 = contato2.getElementsByTagName("phone")[0].getAttribute("type") + ": "
+            telefone1 = typeph1 + contato2.getElementsByTagName("phone")[0].firstChild.data
+            typeph2 = contato2.getElementsByTagName("phone")[1].getAttribute("type") + ": "
+            telefone2 = typeph2 + contato2.getElementsByTagName("phone")[1].firstChild.data
+            email = "email: " + contato2.getElementsByTagName("email")[0].firstChild.data
+
+            frase = "turma: " + contato2.getElementsByTagName("turma")[0].firstChild.data
+
+            alert("Cartão de contato: \n\n" + nome + "\n" + telefone1 + "\n"
+                + telefone2 + "\n" + email + "\n" + turma)
+        }
+
+    </script>
+    <title>Agenda</title>
+</head>
+
+<body>
+    <xml id="agenda" style="display: none">
+
+        <companynames>
+
+            <contatoname>
+                <name>Carlos Fonseca</name>
+                <phone type="Telefone da Casa" primary="call me">(91) 9844552841</phone>
+                <phone type="Telefone do Pessoal">(91) 984411984221</phone>
+                <email>Carlos.f@gmail.com</email>
+                <turma>Informática para internet 1M</turma>
+            </contatoname>
+
+            <contatoname>
+                <name>João Martins</name>
+                <phone type="Telefone da Casa">(91) 123456789</phone>
+                <phone type="Telefone do Pessoal" primary="call me">(91) 987654321</phone>
+                <email>joao.m@gmail.com</email>
+                <turma>Meio Ambiente 3M</turma>
+            </contatoname>
+
+        </companynames>
+
+
+    </xml>
+
+    <a href="javascript:display1()">contato 1</a><br />
+    <a href="javascript:display2()">contato 2</a>
+
+</body>
+
+</html>
